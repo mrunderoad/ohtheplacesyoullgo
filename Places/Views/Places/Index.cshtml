@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Oh, the Places You'll Go!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+  @using Places.Models
+    <div class="container">
+    @if (Model.Count == 0)
+    {
+      <p> You ain't been nowhere, frain. </p>
+    }
+    <ul>
+      @foreach (Place place in Model)
+      {
+        <li><a href='/places/@place.Id'>@place.CityName</a></li>
+        <li>--------------------</li>
+      }
+    </ul>
+    <a href='/places/new'><button class="btn-warning">Add another place!</button></a>
+    <form action="/places/delete" method="post">
+    <button class="btn-warning">Delete all places</button>
+    </form>
+    </div>
+  </body>
+</html>

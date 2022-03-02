@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Oh, the Places You'll Go!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <form action="/places" method="post">
+          <label for="cityName">Add a city you've visited:</label>
+          <input id="cityName" name="cityName" type="text" placeholder="City Goes Here">
+          <label for="landmarks">Add Landmarks for City</label>
+          <input id="landmarks" name="landmarks" type="text" placeholder="Landmarks Go Here">
+          <label for="people">Who Did You Travel With?</label>
+          <input id="people" name="people" type="text" placeholder="People Go Here">
+          <label for="journal">Add A Journal Entry</label>
+          <input id="journal" name="journal" type="text" placeholder="Info/Facts/Cool stuff">
+          <button class="btn-primary" type="submit">Go Time</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
