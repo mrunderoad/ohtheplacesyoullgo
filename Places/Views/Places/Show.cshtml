@@ -19,9 +19,15 @@
       <h3>Journal Entry</h3>
       <div class="card">
         <textarea>@Model.Journal</textarea>
-      </div>   
+      </div>
+      <h3>Your Stay</h3>
+      <h4>You arrived on @Model.Arrive and departed on @Model.Depart</h4> 
 
-      <!-- form for adding new landmarks -->
+      <form action="/places/@place.Id" method="patch">
+        <label for="cityName">Update City Name</label>
+        <input id="cityName" name="cityName" type="text" placeholder="Update Name">
+      </form>  
+      
     </div>
   </body>
 </html>

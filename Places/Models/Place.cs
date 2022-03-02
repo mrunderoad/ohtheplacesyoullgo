@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace Places.Models
 {
@@ -8,16 +9,20 @@ namespace Places.Models
     public string Landmarks { get; set; }
     public string People { get; set; }
     public string Journal { get; set; }
+    public string Arrive { get; set; }
+    public string Depart { get; set; }
     public int Id { get; }
 
     public static List<Place> _instances = new List<Place> { };
 
-    public Place (string cityName, string landmarks, string people, string journal)
+    public Place (string cityName, string landmarks, string people, string journal, string arrive, string depart)
     {
       CityName = cityName;
       Landmarks = landmarks;
       People = people;
       Journal = journal;
+      Arrive = arrive;
+      Depart = depart;
       _instances.Add(this);
       Id = _instances.Count;
     }
@@ -36,5 +41,10 @@ namespace Places.Models
     {
       return _instances[searchId-1];
     }
+
+    // public static TimeSpan GetStay()
+    // {
+    //   return Depart - Arrive;
+    // }
   }
 }

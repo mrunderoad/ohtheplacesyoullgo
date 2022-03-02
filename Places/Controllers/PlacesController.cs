@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Places.Models;
 using System.Collections.Generic;
+using System;
+// using System.Windows.Forms;
 
 namespace Places.Controllers
 {
@@ -10,8 +12,7 @@ namespace Places.Controllers
     [HttpGet("/places")]
     public ActionResult Index()
     {
-      List<Place> allPlaces = Place.GetAll();
-      return View(allPlaces);
+      return View(Place.GetAll());
     }
 
     [HttpGet("/places/new")]
@@ -21,9 +22,9 @@ namespace Places.Controllers
     }
 
     [HttpPost("/places")]
-    public ActionResult Create(string cityName, string landmarks, string people, string journal)
+    public ActionResult Create(string cityName, string landmarks, string people, string journal, string arrive, string depart)
     {
-      Place myPlace = new Place(cityName, landmarks, people, journal);
+      Place myPlace = new Place(cityName, landmarks, people, journal, arrive, depart);
       return RedirectToAction("Index");
     }
 
@@ -37,8 +38,8 @@ namespace Places.Controllers
     [HttpGet("/places/{id}")]
     public ActionResult Show(int id)
     {
-      Place foundPlace = Place.Find(id);
-      return View(foundPlace);
+      return View(Place.Find(id));
     }
+    
   }
 }
